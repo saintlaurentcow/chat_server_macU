@@ -22,27 +22,23 @@ public class Weeds extends Plant{
 
     @Override
     void seedAction() {
-        throw new UnsupportedOperationException("Not supported yet."); //Added an exception to prevent it throwing an error - Allie
     }
 
     @Override
     void seedlingAction() {
-        throw new UnsupportedOperationException("Not supported yet."); //See above - Allie
     }
 
     @Override
     void juvenileAction() {
-        throw new UnsupportedOperationException("Not supported yet."); //Ditto - Allie
     }
 
     @Override
     void adultAction() {
-        throw new UnsupportedOperationException("Not supported yet."); //Fourth verse same as the first - Allie
     }
 
     @Override
     void deadAction() {
-        throw new UnsupportedOperationException("Not supported yet."); //You get the idea - Allie
+        //removed exceptions
     }
 
     
