@@ -23,9 +23,12 @@ abstract class Plant extends JPanel implements Growable {
     Plant(Point p, Window window) {
         //These numbers are all arbitrary placeholders for now
         this.window = window;
+        this.position = p;
+
         spreadNum = 2;
         spreadRadius = 100;
         growthDelay = 5000;
+
         timer = new Timer();
         TimerTask grow = new TimerTask() {
             @Override
@@ -44,12 +47,27 @@ abstract class Plant extends JPanel implements Growable {
         timer.schedule(grow, growthDelay, growthDelay);
         timer.schedule(tick, 25, 25);
 
-        this.position = p;
+    
 
         this.setBounds(p.x-size/8, p.y-size/8, size/4, size/4);
         this.setBackground(Color.darkGray);
         window.addToGround(this, null); //leak here - Allie
     }
+
+    protected int getInitialSpreadNum(){
+        return 2; 
+    }
+    protected int getInitialSpreadRadius(){
+        return 100;
+    }
+    protected int getInitialGrowthDelay(){
+        return 5000;
+    }
+    protected boolean scalesWithGrowth(){
+        return true;
+    }
+
+
 
     //All plants will have these stages. The ___Action() methods allow each phase
     //to be customised per specific plant.
@@ -64,12 +82,16 @@ abstract class Plant extends JPanel implements Growable {
                 seedlingAction();
             }
             case JUVENILE -> {
-                this.setBounds(position.x-size/4, position.y-size/4, size/2, size/2);
+                if (scalesWithGrowth()){
+                    this.setBounds(position.x - size/4, position.y - size/4, size/2, size/2);
+                }
                 this.setBackground(new Color(1, 120, 5));
                 juvenileAction();
             }
             case ADULT -> {
-                this.setBounds(position.x-size/2, position.y-size/2, size, size);
+                if (scalesWithGrowth()){
+                    this.setBounds(position.x - size/2, position.y - size/2, size, size);
+                }
                 this.setBackground(new Color(1, 71, 4));
                 adultAction();
             }
@@ -77,7 +99,6 @@ abstract class Plant extends JPanel implements Growable {
                 this.setBackground(Color.BLACK);
                 deadAction();
                 window.removeFromGround(this);
-                window.refresh();
             }
         }
     }
@@ -96,13 +117,7 @@ abstract class Plant extends JPanel implements Growable {
     abstract void adultAction();
     abstract void deadAction();
 
-    @SuppressWarnings("unused")
-    Point getPosition() {
+    Point getPosition(){
         return position;
-    }
-
-    @SuppressWarnings("override")
-    public String toString() {
-        return "Replace this function";
     }
 }
