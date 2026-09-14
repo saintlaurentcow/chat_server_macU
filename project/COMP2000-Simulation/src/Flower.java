@@ -6,7 +6,7 @@ import java.awt.*;
     }
 
     public void bloom(){    //Display the flower blooming
-        this.setBackground(Color.RED);      
+        this.setBackground(getBloomColor());      
         if ((int) (Math.random() * 100) == 0) {
             spread();
         }
