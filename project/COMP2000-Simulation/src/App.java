@@ -10,5 +10,6 @@ public class App {
 
 
         new Sunflower(new Point(200, 200), window);
+        new Weeds(new Point(400, 200), window);
     }
 }
