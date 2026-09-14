@@ -43,7 +43,7 @@ public class Sunflower extends Flower{
         
         for(int i = 0; i < spreadNum; i++) {
             Point newPoint = radius.getRandomPoint();
-            new Sunflower(newPoint, window)   
+            new Sunflower(newPoint, window);   
         }
     }
 }
