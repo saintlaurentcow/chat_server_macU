@@ -1,7 +1,5 @@
 import java.awt.*;
 
-
-
   abstract class Flower extends Plant {
     Flower(Point p, Window window) {
         super(p, window);
@@ -14,7 +12,7 @@ import java.awt.*;
         }
     }  
 
-
+    protected abstract Color getBloomColor();
     
     //Flowers will always bloom when they are adults
     @Override
