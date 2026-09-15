@@ -18,22 +18,18 @@ public class Sunflower extends Flower{
 
     @Override
     public void seedAction() {
-
     }
 
     @Override
     public void seedlingAction() {
-
     }
 
     @Override
     public void juvenileAction() {
-
     }
 
     @Override
     public void deadAction() {
-
     }
 
     @Override
