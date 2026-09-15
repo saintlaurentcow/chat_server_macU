@@ -1,7 +1,5 @@
 import java.awt.*;
 
-
-
   abstract class Flower extends Plant {
     Flower(Point p, Window window) {
         super(p, window);
@@ -21,7 +19,4 @@ import java.awt.*;
     public void adultAction() {
         bloom();
     }
-
-
-
 }
