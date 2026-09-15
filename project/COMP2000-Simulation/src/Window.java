@@ -1,5 +1,7 @@
 import java.awt.*;
 import javax.swing.*;
+import java.util.List;
+import java.util.ArrayList;
 
 public class Window extends JFrame{
     //Window of the application
@@ -9,6 +11,7 @@ public class Window extends JFrame{
     public static int WIN_HEIGHT = 600;
     private final Sky sky; //changed to final - Allie
     private final Ground ground; //changed to final - Allie
+    private final List<Plant> plants = new ArrayList<>();
 
     Window() {
         sky = new Sky();
@@ -30,7 +33,6 @@ public class Window extends JFrame{
         this.add(ground,c);
         
         this.pack();
-
         this.setVisible(true);
     }
 
@@ -38,10 +40,18 @@ public class Window extends JFrame{
     //must be added to the ground.
     public void addToGround(Component comp, Object constraints) {
         ground.add(comp, constraints);
+        if(comp instanceof Plant plant){
+            plants.add(plant);
+        }
+        refresh();
     }
 
     public void removeFromGround(Component comp) {
         ground.remove(comp);
+        if(comp instanceof Plant plant){
+            plants.remove(plant);
+        }
+        refresh();
     }
 
     public void refresh() {
@@ -51,5 +61,9 @@ public class Window extends JFrame{
 
     public Sky getSky(){
         return this.sky;
+    }
+
+    public List<Plant> getPlants(){
+        return new ArrayList<>(plants);
     }
 }
