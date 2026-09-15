@@ -7,8 +7,8 @@ public class Window extends JFrame{
     //Window of the application
     //Defines screenspace
 
-    public static int WIN_WIDTH = 800;
-    public static int WIN_HEIGHT = 600;
+    public static final int WIN_WIDTH = 800;
+    public static final int WIN_HEIGHT = 600;
     private final Sky sky; //changed to final - Allie
     private final Ground ground; //changed to final - Allie
     private final List<Plant> plants = new ArrayList<>();
