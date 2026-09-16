@@ -19,9 +19,4 @@ public class Controller {
         });
         skyTimer.start();
     }
-    public ActionListener taskPerformer = new ActionListener() {
-        public void actionPerformed(ActionEvent evt) {
-
-        }
-    };
 }

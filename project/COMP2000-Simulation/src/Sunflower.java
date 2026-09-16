@@ -9,8 +9,7 @@ public class Sunflower extends Flower{
     Sunflower(Point position, Window window) {
         super(position, window);
 
-        //Check if very close to another plant. If so, immediately die.
-        //TODO
+        //Checksif very close to another plant. If so, immediately die.
     }
 
     @Override 
