@@ -107,4 +107,12 @@ public class Sunflower extends Flower {
     public String toString() {
         return  ("Pos: " + position.x + ", " + position.y);
     }
+
+    public void setGrowthDelay(int growthDelay) {
+        this.growthDelay = growthDelay;
+    }
+
+    public int getGrowthDelay() {
+        return growthDelay;
+    }
 }

@@ -12,9 +12,14 @@ import supplementary.Window;
 
 public class Weed extends Plant {
 
+    public static int getGrowthDelay() {
+        return growthDelay;
+    }
+
     int spreadNum = 1;
     static final int growthDelay = 1000;
     static final int size = 10;
+    @SuppressWarnings("unused")
     String environmentState;
     public boolean spent = false;
 
@@ -85,6 +90,7 @@ public class Weed extends Plant {
         }
     }
 
+    @Override
     public String toString() {
         return  ("Pos: " + position.x + ", " + position.y);
     }
