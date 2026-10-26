@@ -19,7 +19,4 @@ import java.awt.*;
     public void adultAction() {
         bloom();
     }
-
-
-
 }
