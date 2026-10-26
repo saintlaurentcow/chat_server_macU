@@ -49,7 +49,6 @@ public class Window extends JFrame{
         this.add(ground,c);
         
         this.pack();
-
         this.setVisible(true);
     }
 
@@ -74,6 +73,10 @@ public class Window extends JFrame{
 
     public void removeFromGround(Component comp) {
         ground.remove(comp);
+        if(comp instanceof Plant plant){
+            plants.remove(plant);
+        }
+        refresh();
     }
 
     public void refresh() {
